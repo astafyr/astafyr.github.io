@@ -1,3 +1,15 @@
 a {
     color: #0000ee;
 }
+
+aside {
+    width: 20%;
+    float: right;
+    margin-left: 15px;
+    background-color: lightgray;
+}
+
+img {
+    width: 225px;
+    padding: 25px;
+}
