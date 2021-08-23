@@ -8,10 +8,19 @@
     </head>
     <body>
       <div class="container">
-        <nav>
-            <a href="/index.html">Início</a>
-            <a href="/about.html">Sobre</a>
-            <a href="/contact.html">Contato</a>
+        
+        <nav class="nav navbar-light bg-light">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contato</a>
+            </li>
+          </ul>
         </nav>
 
         <aside>
@@ -20,9 +29,9 @@
             <img src="/images/pix_pp_my_qrcode.jpg" class="img-fluid">
             <hr>
             <div id="smart-button-container">
-                <div style="text-align: center"><label for="description">Mensagem <br></label><input type="text" name="descriptionInput" id="description" maxlength="127" size="25" value="" ></div>
+                <div style="text-align: center"><label for="description">Mensagem <br></label><input type="text" class="form-control-sm" name="descriptionInput" id="description" maxlength="127" size="30" value="" ></div>
                   <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Por favor, adicione uma descrição</p>
-                <div style="text-align: center; margin-top: -10%;"><label for="amount">Valor:&nbsp;</label><input name="amountInput" type="number" id="amount" value="" min="0.01" style="width: 4em"><span> BRL</span></div>
+                <div style="text-align: center; margin-top: -10%;"><label for="amount">Valor:&nbsp;</label><input name="amountInput" type="number" class="form-control-sm" id="amount" value="" min="0.01" style="width: 6em"><span> BRL</span></div>
                   <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Por favor, coloque um valor</p>
                 <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
                   <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>

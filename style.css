@@ -1,12 +1,13 @@
 a {
     color: #0000ee;
+    text-decoration: none;
 }
 
 aside {
     width: 25%;
     float: right;
     margin-left: 15px;
-    background-color: lightgray;
+    background-color: gainsboro;
 }
 
 img {
