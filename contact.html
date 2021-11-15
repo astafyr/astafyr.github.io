@@ -3,4 +3,71 @@ layout: default
 title: Contato
 ---
 <h1>Contato</h1>
-<p>Entre em contato enviando um e-mail para o endereço <mark>davidssousa2@outlook.com</mark></p>
+
+<p>Campos marcados com <span class="asterisk">*</span> são obrigatórios</p>
+
+<form class="col-sm-6" action="https://formspree.io/f/mayaroqg" method="POST" id="my-form">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nome<span class="asterisk">*</span></label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail<span class="asterisk">*</span></label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="subject" class="form-label">Assunto</label>
+        <input type="text" class="form-control" id="subject" name="subject">
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Mensagem<span class="asterisk">*</span></label>
+        <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+</form>
+
+<div id="status"></div>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("my-form");
+    var status = document.getElementById("status");
+
+    function success(){
+        form.reset();
+        status.classList.add('success');
+        status.innerHTML = "Obrigado pela sua mensagem!";
+    }
+
+    function error(){
+        form.reset();
+        status.classList.add('error');
+        status.innerHTML = "Houve um erro ao enviar sua mensagem.";
+    }
+
+    form.addEventListener("submit", function(ev){
+        ev.preventDefault();
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+    });
+});
+
+function ajax(method, url, data, success, error){
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState !== XMLHttpRequest.DONE) return;
+        if(xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        } else{
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
+}
+</script>
+
+<p>Caso não queira usar o formulário, basta enviar um e-mail para <ins>davidssousa2@outlook.com</ins></p>
