@@ -17,6 +17,10 @@ aside img {
     margin-right: auto;
 }
 
+.dropdown-item:hover{
+    color: black;
+}
+
 .asterisk {
     color: red;
 }
