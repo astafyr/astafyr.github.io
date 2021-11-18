@@ -23,7 +23,7 @@ function initPayPalButton() {
 
     paypal.Buttons({
         style: {
-            size: 'small',
+            size: 'responsive',
             color: 'blue',
             shape: 'pill',
             label: 'pay',
