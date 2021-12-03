@@ -48,3 +48,9 @@ aside img {
 .display-1 {
     font-family: Cambria;
 }
+
+h1 img{
+    width: 150px;
+    height: 75px;
+    vertical-align: baseline;
+}
